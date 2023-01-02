@@ -7,6 +7,7 @@
 - kubectl
 - eksctl
 
+
 ---
 ## Overview
 ---Make sure you have the prerequisites installed on your linux or unix system 

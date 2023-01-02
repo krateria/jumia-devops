@@ -20,8 +20,8 @@ resource "aws_launch_template" "eks-nodes-launch" {
   name = "prod"
 
   instance_type = var.eks_instance_type
-  key_name = aws_key_pair.generated_key.key_name
-  
+  key_name      = aws_key_pair.generated_key.key_name
+
   vpc_security_group_ids = [aws_eks_cluster.eks.vpc_config[0].cluster_security_group_id]
 
 

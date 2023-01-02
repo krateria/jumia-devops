@@ -29,7 +29,7 @@ POLICY
 resource "aws_iam_role_policy_attachment" "amazon_eks_worker_node_policy_general" {
   # The ARN of the policy you want to apply.
   # https://github.com/SummitRoute/aws_managed_policies/blob/master/policies/AmazonEKSWorkerNodePolicy
-  policy_arn = var.eks_iam_policy_attachment  
+  policy_arn = var.eks_iam_policy_attachment
 
   # The role the policy should be applied to
   role = aws_iam_role.nodes_general.name
@@ -87,12 +87,12 @@ resource "aws_eks_node_group" "nodes_general" {
   scaling_config {
     # Desired number of worker nodes.
     desired_size = 2
-    max_size = 2
-    min_size = 1
+    max_size     = 2
+    min_size     = 1
   }
 
   launch_template {
-    id = aws_launch_template.eks-nodes-launch.id
+    id      = aws_launch_template.eks-nodes-launch.id
     version = aws_launch_template.eks-nodes-launch.latest_version
   }
   # Type of Amazon Machine Image (AMI) associated with the EKS Node Group.

@@ -1,11 +1,11 @@
 variable "region" {
   description = "aws account region"
-  type = string
+  type        = string
 }
 
 variable "aws_profile" {
   description = "aws cli profile name"
-  type = string
+  type        = string
 }
 
 variable "db_username" {
@@ -133,8 +133,8 @@ variable "eks_node_group_name" {
 }
 
 variable "account_id" {
-  type    = string
-  sensitive   = true
+  type      = string
+  sensitive = true
 }
 
 

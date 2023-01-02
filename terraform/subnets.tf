@@ -3,7 +3,7 @@
 
 data "aws_availability_zones" "available" {
   state = "available"
-  
+
 }
 
 resource "aws_subnet" "public_1" {
@@ -13,7 +13,7 @@ resource "aws_subnet" "public_1" {
   # The CIDR block for the subnet.
   cidr_block = var.public_subnet_a_cidr_block
 
-    # The AZ for the subnet.
+  # The AZ for the subnet.
   availability_zone = data.aws_availability_zones.available.names[0]
 
   # Required for EKS. Instances launched into the subnet should be assigned a public IP address.
@@ -83,7 +83,7 @@ resource "aws_subnet" "private_1" {
 
   # A map of tags to assign to the resource.
   tags = {
-    Name                        = "private-${data.aws_availability_zones.available.names[0]}"
+    Name                              = "private-${data.aws_availability_zones.available.names[0]}"
     "kubernetes.io/cluster/eks"       = "shared"
     "kubernetes.io/role/internal-elb" = 1
   }
@@ -101,7 +101,7 @@ resource "aws_subnet" "private_2" {
 
   # A map of tags to assign to the resource.
   tags = {
-    Name                        = "private-${data.aws_availability_zones.available.names[1]}"
+    Name                              = "private-${data.aws_availability_zones.available.names[1]}"
     "kubernetes.io/cluster/eks"       = "shared"
     "kubernetes.io/role/internal-elb" = 1
   }
